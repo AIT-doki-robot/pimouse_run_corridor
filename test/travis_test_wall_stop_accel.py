@@ -7,10 +7,10 @@ import time
 from geometry_msgs.msg import Twist
 from pimouse_ros.msg import LightSensorValues
 
-class WallStopTest(unittest.TestCase):
+class WallStopAccelTest(unittest.TestCase):
     def set_and_get(self, lf, ls, rs, rf):
         with open("/dev/rtlightsensor0", "w") as f:
-            f.wirte("%d %d %d %d\n" % (rf, rs, ls, lf))
+            f.write("%d %d %d %d\n" % (rf, rs, ls, lf))
 
             time.sleep(0.3)
 
@@ -24,16 +24,18 @@ class WallStopTest(unittest.TestCase):
 
     def test_io(self):
         left, right = self.set_and_get(400,100,100,0) #total : 600
-        self.assertTrue( left==0 and right==0, "can't stop")
+        self.assertTrue( left == right==0, "can't stop")
 
-        left, right = self.set_and_get(100,100,100,100) #total:400
-        self.assertTrue( left!=0 and right!=0, "can't move again")
+        left, right = self.set_and_get(10,10,10,10) #total:40
+        self.assertTrue( 0 < left == right <1000, "can't move again")
 
-        left, right = self.set_and_get(150,0,200,150) #total:500
-        self.assertTrue( left==0 and right==0, "can't stop")
+        time.sleep(5.0)
+
+        left, right = self.set_and_get(15,10,10,15) #total:50
+        self.assertTrue( left == right==0, "can't stop")
 
 if __name__ == '__main__':
     time.sleep(3)
-    rospy.init_node('travis_test_wall_stop')
-    rostest.rosrun('pimouse_ros','travis_test_wall', WallStopTest)
+    rospy.init_node('travis_test_wall_stop_accel')
+    rostest.rosrun('pimouse_ros','travis_test_wall_accel', WallStopAccelTest)
  
