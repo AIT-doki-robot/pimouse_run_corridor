@@ -13,13 +13,13 @@ class WallStopTest(unittest.TestCase):
             f.write("%d %d %d %d\n" % (rf,rs,ls,lf))
 
             time.sleep(0.3)
-            left = 0
+#            left = 0
             right = 0
 
-#        with open("/dev/rtmotor_raw_l0","r") as lf,\
+        with open("/dev/rtmotor_raw_l0","r") as lf,\
 #             open("/dev/rtmotor_raw_r0","r") as rf:
 
-#            left = int(lf.readline().rstrip())
+            left = int(lf.readline().lstrip())
 #            right= int(rf.readline().rstrip())
 
         return left, right
@@ -27,7 +27,8 @@ class WallStopTest(unittest.TestCase):
     def test_io(self):
         pass
         left, right = self.set_and_get(400,100,100,0) #total : 600
-        self.assertTrue(left==0 and right==0,"can't stop")
+        self.assertTrue(left == 0,"hoge")
+#        self.assertTrue(left==0 and right==0,"can't stop")
 
 #        left, right = self.set_and_get(100,100,100,100) #total:400
 #        self.assertTrue(left!=0 and right!=0,"can't move again")
