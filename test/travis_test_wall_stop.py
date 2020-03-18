@@ -16,7 +16,7 @@ class WallStopTest(unittest.TestCase):
 #            left = 0
             right = 0
 
-        with open("/dev/rtmotor_raw_l0","r") as lf,\
+        with open("/dev/rtmotor_raw_l0","r") as lf
 #             open("/dev/rtmotor_raw_r0","r") as rf:
 
             left = int(lf.readline().lstrip())
