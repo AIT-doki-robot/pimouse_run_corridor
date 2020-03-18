@@ -14,7 +14,7 @@ class WallStop():
         self.sensor_values = LightSensorValues()
         #create instance for sensor value
 
-        rospy.Subscriber('/lightsensors',LightSensorValues, self.callback)
+        rospy.Subscriber('/lightsensors', LightSensorValues, self.callback)
         #if data is updated, execute callback function
 
     def callback(self,messages):
