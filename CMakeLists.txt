@@ -106,7 +106,7 @@ find_package(catkin REQUIRED
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES pimouse_run_corridor
-  CATKIN_DEPENDS rospy std_srvs 
+  CATKIN_DEPENDS rospy std_srvs pimouse_ros
 #  DEPENDS system_lib
 )
 
