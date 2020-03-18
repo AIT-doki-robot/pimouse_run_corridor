@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #encoding: utf-8
 
-import rospy
+import rospy, copy
 from geometry_msgs.msg import Twist
 from std_srvs.srv import Trigger, TriggerResponse
 from pimouse_ros.msg import LightSensorValues
