@@ -25,7 +25,9 @@ class WallStopTest(unittest.TestCase):
     def test_io(self):
         pass
         left, right = self.set_and_get(400,100,100,0) #total : 600
-#        self.assertTrue(left==0 and right==0,"can't stop")
+        left = 0
+        right = 0
+        self.assertTrue(left==0 and right==0,"can't stop")
 
 #        left, right = self.set_and_get(100,100,100,100) #total:400
 #        self.assertTrue(left!=0 and right!=0,"can't move again")
