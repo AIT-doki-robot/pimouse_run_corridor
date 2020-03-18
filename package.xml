@@ -37,6 +37,7 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>rospy</build_depend> -->
   <exec_depend>rospy</exec_depend>
+  <build_depend>pimouse_ros</build_depend>
   <exec_depend>pimouse_ros</exec_depend>
   <build_depend>std_srvs</build_depend>
   <exec_depend>std_srvs</exec_depend>
