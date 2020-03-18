@@ -4,8 +4,8 @@
 import unittest, rostest
 import rosnode, rospy
 import time
-from geometry_msgs.msg import Twist
-from pimouse_ros.msg import LightSensorValues
+#from geometry_msgs.msg import Twist
+#from pimouse_ros.msg import LightSensorValues
 
 class WallStopTest(unittest.TestCase):
     def set_and_get(self, lf, ls, rs, rf):
