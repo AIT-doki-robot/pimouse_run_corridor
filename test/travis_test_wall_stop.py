@@ -8,7 +8,7 @@ import time
 from pimouse_ros.msg import LightSensorValues
 
 class WallStopTest(unittest.TestCase):
-    def set_and_get(self, lf, ls, rs, rf):
+    def set_and_get(self,lf,ls,rs,rf):
         with open("/dev/rtlightsensor0", "w") as f:
             f.write("%d %d %d %d\n" % (rf,rs,ls,lf))
 
@@ -24,7 +24,7 @@ class WallStopTest(unittest.TestCase):
 
     def test_io(self):
         pass
-#        left, right = self.set_and_get(400,100,100,0) #total : 600
+        left, right = self.set_and_get(400,100,100,0) #total : 600
 #        self.assertTrue(left==0 and right==0,"can't stop")
 
 #        left, right = self.set_and_get(100,100,100,100) #total:400
