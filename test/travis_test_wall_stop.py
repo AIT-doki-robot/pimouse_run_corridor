@@ -5,11 +5,13 @@ import unittest, rostest
 import rosnode, rospy
 import time
 #from geometry_msgs.msg import Twist
-#from pimouse_ros.msg import LightSensorValues
+from pimouse_ros.msg import LightSensorValues
 
 class WallStopTest(unittest.TestCase):
     def set_and_get(self, lf, ls, rs, rf):
         with open("/dev/rtlightsensor0", "w") as f:
+            data = LightSensorValues()
+            data.right_forward = rs
             f.write("%d %d %d %d\n" % (rf,rs,ls,lf))
 
             time.sleep(0.3)
